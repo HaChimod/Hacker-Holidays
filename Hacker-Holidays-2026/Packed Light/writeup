@@ -1,2 +1,3 @@
 Bước 1: Initial Analysis
 Bước đầu tiên là mở file traffic.pcapng bằng Wireshark. Do đề bài nhắc đến lưu lượng mạng bất thường, mình tập trung vào các giao thức tầng ứng dụng.
+![Nmap Scan](pic/1.png)
