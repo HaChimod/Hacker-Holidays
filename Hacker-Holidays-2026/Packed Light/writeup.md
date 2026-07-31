@@ -1,11 +1,13 @@
 Bước 1: Initial Analysis
 Bước đầu tiên là mở file traffic.pcapng bằng Wireshark. Do đề bài nhắc đến lưu lượng mạng bất thường, mình tập trung vào các giao thức tầng ứng dụng.
-![Wireshark Traffic Analysis](pic/1.PNG)
+<img width="991" height="470" alt="1" src="https://github.com/user-attachments/assets/8944f42a-e304-4727-a59b-831dd3f7423d" />
+
 Ở đây ta thấy địa chỉ ip local giao tiếp tuần tự với 1 ip public trong mạng và có lấy 1 file python
 Bước 2: Export HTTP Objects
 Trong các object xuất hiện có một file Python.
 Sau khi export, thu được đoạn mã:
-![Python file](pic/2.PNG)
+<img width="733" height="788" alt="2" src="https://github.com/user-attachments/assets/61fbdf07-9e17-4d8e-984a-d1fc1f475280" />
+
 Ta thấy đây là file key logger, được mã hóa bằng xor. 
 Khóa được tạo từ:
 p1 = "H0t3lSt@ff0Nly"
@@ -19,7 +21,7 @@ tshark -r traffic.pcapng \
 -T fields \
 -e http.cookie
 </span>
-![Data](pic/3.PNG)
+<img width="862" height="538" alt="3" src="https://github.com/user-attachments/assets/11532a0f-fe8f-4d7a-8d35-5802d49fc65e" />
 Bước 4: Giải mã lại dữ liệu bằng python để lấy flag.
 Do malware sử dụng: 
 Plaintext
@@ -38,5 +40,6 @@ Base64 Decode
 XOR cùng key
 ↓
 Original Character
-![Flag](pic/4.PNG)
+<img width="896" height="782" alt="4" src="https://github.com/user-attachments/assets/7a671767-20a1-40d3-9542-ff0d0a6e3c7b" />
+
 
